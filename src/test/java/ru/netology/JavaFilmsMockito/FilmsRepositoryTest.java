@@ -74,4 +74,16 @@ public class FilmsRepositoryTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldNotAddNewFilm() {
+        FilmsRepository repo = new FilmsRepository();
+
+        repo.addFilm("");
+
+        String[] expected = {""};
+        String[] actual = repo.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
